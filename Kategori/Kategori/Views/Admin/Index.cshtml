@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <button type="button" class="btn btn-primary">
+                    <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="IndexUrun">Ürünler</a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <button type="button" class="btn btn-primary">
+                    <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="IndexCategory">Kategoriler</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,50 @@
+﻿@using Kategori.Models
+@model List<Category>
+
+@{
+    ViewData["Title"] = "IndexCategory";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h3>Kategori Listesi</h3>
+
+<a class="btn btn-primary" href="/Admin/CreateCategory" role="button">Kayıt</a>
+
+<div class="wrapper style1 first">
+    <article class="container" id="top">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Kategori Numarası</th>
+                        <th scope="col">Kategori İsmi</th>
+                        <th scope="col">Kategori Açıklaması</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Düzenle</th>
+                        <th scope="col">Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var x in Model)
+                    {
+                        <tr>
+                            <th scope="row">#</th>
+                            <td>@x.CategoryId</td>
+                            <td>@x.CategoryName</td>
+                            <td>@x.CategoryDescription</td>
+                            <td>@x.CategoryStatus</td>
+
+                            <td>
+                                <a class="btn btn-primary" href="/Admin/UpdateCategory/@x.CategoryId" role="button">Düzenle</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-primary" href="/Admin/DeleteCategory/@x.CategoryId" role="button">Sil</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </article>
+</div>

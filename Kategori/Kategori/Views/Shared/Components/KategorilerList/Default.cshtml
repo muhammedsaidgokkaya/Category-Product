@@ -1,0 +1,11 @@
+﻿@using Kategori.Models;
+@model List<Category>
+
+<ul class="navbar-nav flex-grow-1">
+    @foreach (var i in Model)
+    {
+    <li class="nav-item">
+        <a class="nav-link text-light" href="/Home/CategoryDetails/@i.CategoryId">@i.CategoryName</a>
+    </li>
+    }
+</ul>

@@ -1,0 +1,37 @@
+﻿@using Kategori.Models
+@model Urunler
+
+@{
+    ViewData["Title"] = "UpdateUrun";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h3>Ürün Düzenle</h3>
+
+<form action="/Admin/UpdateUrun" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Id</label>
+        <input type="text" class="form-control" value="@Model.Id" name="Id" readonly />
+    </div>
+    <div class="form-group">
+        <label>Ürün İsmi</label>
+        <input type="text" class="form-control" value="@Model.Name" name="Name" />
+    </div>
+    <div class="form-group">
+        <label>Ürün Fiyatı</label>
+        <input type="text" class="form-control" value="@Model.Price" name="Price" />
+    </div>
+    <div class="form-group">
+        <label>Ürün Açıklaması</label>
+        <input type="text" class="form-control" value="@Model.Description" name="Description" />
+    </div>
+    <div class="form-group">
+        <label>Ürün Kategori Numarası</label>
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.Category, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Resim Uzantısı</label>
+        <input type="file" class="form-control" value="@Model.ImgFile" name="ImgFile" />
+    </div>
+    <button type="submit" class="btn btn-primary" value="kaydet">Kaydet</button>
+</form>

@@ -1,0 +1,36 @@
+﻿@using Kategori.Models
+@model Urunler
+
+@{
+    ViewData["Title"] = "CreateUrun";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h3>Ürün Kayıt</h3>
+
+<div class="container">
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Ürün İsmi</label>
+            <input type="text" class="form-control" name="Name" />
+        </div>
+        <div class="form-group">
+            <label>Ürün Fiyatı</label>
+            <input type="text" class="form-control" name="Price" />
+        </div>
+        <div class="form-group">
+            <label>Ürün Açıklaması</label>
+            <input type="text" class="form-control" name="Description" />
+        </div>
+        <div class="form-group">
+            <label>Ürün Kategori Numarası</label>
+            @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.Category, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Resim Uzantısı</label>
+            <input type="file" class="form-control" name="ImgFile" />
+        </div>
+        <button type="submit" class="btn btn-primary" value="kaydet">Kaydet</button>
+    </form>
+</div>
+
